@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add</title>
+</head>
+<body>
+
+    <h2>Adding Link</h2>
+    <form method="POST" action="/add">
+        <input type="text" name="name" placeholder="Your Name" value="<%= body.name%>">
+        <input type="text" name="sn" placeholder="Your Social Network" value="<%= body.sn%>">
+        <input type="text" name="url" placeholder="URL" value="<%= body.url%>">
+        <button type="submit">Save</button>
+    </form>
+
+    <% if(error) {%>
+        <h3><%= error.message %> </h3>
+    <% } %> 
+
+</body>
+</html>
