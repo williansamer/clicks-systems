@@ -4,6 +4,9 @@ const path = require("path");
 const ejs = require("ejs");
 const mongoose = require("mongoose");
 const routerLink = require("./routes/linkroutes");
+const dotenv = require("dotenv");
+
+dotenv.config();
 
 mongoose.connect("mongodb://127.0.0.1:27017/users")
     .then(()=>{
@@ -15,6 +18,6 @@ mongoose.connect("mongodb://127.0.0.1:27017/users")
         console.log(error);
     })
 
-app.listen(3000, ()=>{
+app.listen(process.env.PORT || 3000, ()=>{
     console.log("Server running..")
 })
